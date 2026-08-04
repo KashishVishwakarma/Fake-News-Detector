@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fake News Detector</title>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📰 AI Fake News Detector</h1>
+
+    <p class="subtitle">
+        Paste a news article below and let AI predict whether it is
+        <strong>Real</strong> or <strong>Fake</strong>.
+    </p>
+
+    <form action="/predict" method="POST" id="newsForm">
+
+        <textarea
+            name="news"
+            id="news"
+            placeholder="Paste the news article here..."
+            required></textarea>
+
+        <button type="submit" id="predictBtn">
+            Detect News
+        </button>
+
+    </form>
+
+    <div id="loading" class="loading">
+        ⏳ Analyzing...
+    </div>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>{{ prediction }}</h2>
+
+        {% if confidence %}
+        <h3>Confidence : {{ confidence }}%</h3>
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
