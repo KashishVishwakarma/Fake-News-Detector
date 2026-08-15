@@ -1,9 +1,8 @@
 /**
- * Background Service Worker
- * Routes text analysis requests to the live Render backend API.
+ * Service Worker script managing API communications between content scripts,
+ * popup interfaces, and your live Render FastAPI backend server.
  */
 
-// Replace the placeholder below with your exact Render URL from Step 1
 const API_ENDPOINT = "https://fake-news-detector-2-1jco.onrender.com/predict";
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -21,7 +20,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP network error: status ${response.status}`);
       }
       return response.json();
     })
@@ -29,10 +28,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse({ status: "SUCCESS", data: data });
     })
     .catch(error => {
-      console.error("Fetch error in background script:", error);
+      console.error("Background service worker fetch error:", error);
       sendResponse({ status: "ERROR", error: error.message });
     });
 
-    return true; // Keeps the message channel open for async response
+    return true; // Keeps async channel open for Chrome message passing
   }
 });
