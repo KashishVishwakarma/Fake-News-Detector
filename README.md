@@ -104,6 +104,7 @@ The API is deployed and live on Render:
 * **Deployment:** Render (Docker container)
 ---
 🌐Live Demo
+---
 Base url:
 https://fake-news-detector-2-1jco.onrender.com
 ---
