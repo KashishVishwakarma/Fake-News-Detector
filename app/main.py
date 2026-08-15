@@ -22,13 +22,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/", status_code=status.HTTP_200_OK)
+async def root():
+    """Welcome endpoint providing route links."""
+    return {
+        "status": "online",
+        "message": "Fake News Detector API is active.",
+        "documentation": "/docs",
+        "health_check": "/health"
+    }
+
 @app.get("/health", status_code=status.HTTP_200_OK)
 async def health_check():
     """Health check endpoint to verify model readiness."""
     return {
         "status": "online",
-        "model_loaded": classifier_engine.is_ready,
-        "device": classifier_engine.device
+        "model_loaded": classifier_engine.is_ready
     }
 
 @app.post(
