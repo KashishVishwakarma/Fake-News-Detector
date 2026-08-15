@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TruthShield Verifier</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>TruthShield AI</h2>
+      <span class="version">v1.0</span>
+    </header>
+    <main>
+      <p class="subtitle">On-Reader Content Verifier</p>
+      <button id="analyze-btn" class="primary-btn">Analyze Current Page</button>
+
+      <div id="loader" class="hidden">
+        <div class="spinner"></div>
+        <p>Evaluating page content...</p>
+      </div>
+
+      <div id="results-card" class="card hidden">
+        <div class="verdict-header">
+          <span id="verdict-tag" class="tag"></span>
+          <span id="confidence-val" class="score"></span>
+        </div>
+        <div class="metric-row">
+          <span>Risk Level:</span>
+          <strong id="risk-val"></strong>
+        </div>
+        <div class="metric-row">
+          <span>Fake Probability:</span>
+          <span id="fake-prob"></span>
+        </div>
+        <div class="metric-row">
+          <span>Real Probability:</span>
+          <span id="real-prob"></span>
+        </div>
+      </div>
+
+      <div id="error-message" class="error-box hidden"></div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
