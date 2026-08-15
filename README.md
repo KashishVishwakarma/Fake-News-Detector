@@ -105,17 +105,17 @@ The API is deployed and live on Render:
 ---
 🌐Live Demo
 ---
-*Base url:
+Base url:
 
-https://fake-news-detector-2-1jco.onrender.com
+**https://fake-news-detector-2-1jco.onrender.com
 ---
-*Interactive Docs:
+Interactive Docs:
 
-https://fake-news-detector-2-1jco.onrender.com/docs
+**https://fake-news-detector-2-1jco.onrender.com/docs
 ---
-*Health Check:
+Health Check:
 
-https://fake-news-detector-2-1jco.onrender.com/health
+**https://fake-news-detector-2-1jco.onrender.com/health
 ---
 ✍️Author:
 ----
