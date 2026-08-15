@@ -102,6 +102,13 @@ The API is deployed and live on Render:
 * **Framework:** Python 3.11, FastAPI, Uvicorn, Pydantic
 * **AI Model:** Hugging Face Serverless Inference API (RoBERTa Model)
 * **Deployment:** Render (Docker container)
+---
+🌐Live Demo
+Base url:https://fake-news-detector-2-1jco.onrender.com
+Interactive Docs:https://fake-news-detector-2-1jco.onrender.com/docs
+Health Check:https://fake-news-detector-2-1jco.onrender.com/health
+---
+✍️Author
+Kashish Vishwakarma
 
-* Author
-* Kashish Vishwakarma
+
