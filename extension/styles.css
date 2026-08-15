@@ -96,7 +96,7 @@ h2 {
   margin-top: 8px;
 }
 
-/* Floating overlay styles injected into client reader pages */
+/* Floating overlay injected into active browser tabs */
 #truthshield-floating-badge {
   position: fixed;
   top: 20px;
